@@ -1,1 +1,1 @@
-This repository includes activities for ITSC3155.
+This repository includes activities for ITSC3155
