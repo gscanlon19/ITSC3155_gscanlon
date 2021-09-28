@@ -39,7 +39,7 @@ class TestPythonBasicsOne(unittest.TestCase):
         self.assertEqual(pythonBasics3.multiple_words("This was hard"), True)
 
         self.assertEqual(pythonBasics3.multiple_words("I-figured-it-out"), False)
-    
+
         self.assertEqual(pythonBasics3.multiple_words("This is a test"), True)
 
 
