@@ -24,10 +24,9 @@ def starts_with_non_number(s):
 # Note: Be sure to use RegEx and that it works for any whitespace character 
 # with at least one character on either side!
 def multiple_words(s):
-  # YOUR CODE HERE
-
-  return
-
+  if re.search('\w .*\w',s) == None:
+    return False
+  return True
 
 # Part C. reserved_us_tld
 # define a method reserved_us_tld(s) that takes a string and returns true
