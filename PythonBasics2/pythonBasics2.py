@@ -11,18 +11,24 @@
 # to n (including n).
 
 def count_threes(n):
+  #creating list
   n = list(str(n))
+  #declaring variables
   max = 0
   ind = 0
-  umap = {}
-  umap[3] = 0
-  umap[6] = 0
-  umap[9] = 0
+  #dictionary
+  dict = {}
+  dict[3] = 0
+  dict[6] = 0
+  dict[9] = 0
+  #loop through
   for i in n:
     x = int(i)
+    #if divisible by 3
     if x % 3 == 0 and x != 0:
-      umap[x] += 1
-  for i,j in umap.items():
+      dict[x] += 1
+  #iterate through and find max
+  for i,j in dict.items():
     if j > max:
       max = j
       ind = i
@@ -35,26 +41,30 @@ def count_threes(n):
 # Define a function longest_consecutive_repeating_char(s) that takes
 # a string s and returns the character that has the longest consecutive repeat.
 def longest_consecutive_repeating_char(s):
+  #converting to list
   s = list(s)
   count = 1
   max = 1
   l = []
-  umap = {}
+  #dictionary
+  dict = {}
+  #loop through string to find repeats
   for i in range(0, len(s) - 1):
+    #if consecutive
     if s[i] == s[i+1]:
       count += 1
     else:
-      if((s[i] in umap) and umap[s[i]] > count):
+      if((s[i] in dict) and dict[s[i]] > count):
         continue
       else:
-        umap[s[i]] = count
+        dict[s[i]] = count
         count = 1
         c = s[i]
-  umap[s[len(s) - 1]] = count
-  for i,j in umap.items():
+  dict[s[len(s) - 1]] = count
+  for i,j in dict.items():
     if j > max:
       max = j
-  for i,j in umap.items():
+  for i,j in dict.items():
     if j == max:
       l.append(i)
   return l
